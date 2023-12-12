@@ -147,4 +147,22 @@ DIO_ErrorStatus DIO_enumGetPinValue(u8 Copy_u8Port,u8 Copy_u8PinNumber,u8 * Copy
     return Loc_enumState;
 }
 
+DIO_ErrorStatus DIO_enumTogglePortValue(u8 copy_u8PORT)
+{
+	DIO_ErrorStatus Loc_enumState = DIO_OK;
+	u8 Loc_u8Value;
+	Loc_enumState = DIO_enumGetPortValue(copy_u8PORT,&Loc_u8Value);
+	Loc_enumState = DIO_enumSetPortValue(copy_u8PORT, ~Loc_u8Value);
+	return Loc_enumState;
+}
+
+DIO_ErrorStatus DIO_enumTogglePinValue(u8 copy_u8PORT,u8 copy_u8Pin)
+{
+	DIO_ErrorStatus Loc_enumState = DIO_OK;
+	u8 Loc_u8Value;
+	Loc_enumState = DIO_enumGetPinValue(copy_u8PORT, copy_u8Pin,&Loc_u8Value);
+	Loc_enumState = DIO_enumSetPinValue(copy_u8PORT, copy_u8Pin,!Loc_u8Value);
+	return Loc_enumState;
+	
+}
 
