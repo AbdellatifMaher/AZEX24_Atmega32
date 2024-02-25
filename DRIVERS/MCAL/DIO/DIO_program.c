@@ -131,10 +131,10 @@ DIO_ErrorStatus DIO_enumGetPinValue(u8 Copy_u8Port,u8 Copy_u8PinNumber,u8 * Copy
 
         switch (Copy_u8Port)
         {
-        case PORTA: GET_BIT(PINA_REG,Copy_u8PinNumber); break; 
-        case PORTB: GET_BIT(PINB_REG,Copy_u8PinNumber);  break; 
-        case PORTC: GET_BIT(PINC_REG,Copy_u8PinNumber);  break; 
-        case PORTD: GET_BIT(PIND_REG,Copy_u8PinNumber);  break; 
+        case PORTA: *Copy_ptrData = GET_BIT(PINA_REG,Copy_u8PinNumber); break; 
+        case PORTB: *Copy_ptrData = GET_BIT(PINB_REG,Copy_u8PinNumber);  break; 
+        case PORTC: *Copy_ptrData = GET_BIT(PINC_REG,Copy_u8PinNumber);  break; 
+        case PORTD: *Copy_ptrData = GET_BIT(PIND_REG,Copy_u8PinNumber);  break; 
         default: Loc_enumState = DIO_NOK; break;
         }
 
