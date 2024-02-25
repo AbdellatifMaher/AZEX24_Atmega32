@@ -16,7 +16,7 @@ void (*EXTI_CallBack[3]) (void) = { NULL } ;
 void EXTI_voidInit( void )
 {
 #ifdef EXTI_LINE
-
+		SREG |=0b10000000; // Enable Global Interrupt 
 		#if EXTI_LINE == EXTI_LINE1
 				DIO_enumSetPinDirection(DIO_PORTD, DIO_PIN3,DIO_INPUT);
 
