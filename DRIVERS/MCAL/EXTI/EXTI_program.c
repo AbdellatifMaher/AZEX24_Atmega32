@@ -38,7 +38,7 @@ void EXTI_voidInit( void )
 				SET_BIT( MCUCR , 2 ); SET_BIT( MCUCR , 3 );
 
 			#endif
-
+			SET_BIT( GICR , EXTI_LINE1 ); // Enable Interrupt
 
 		#elif EXTI_LINE == EXTI_LINE0
 
@@ -61,6 +61,7 @@ void EXTI_voidInit( void )
 				SET_BIT( MCUCR , 0 ); SET_BIT( MCUCR , 1 );
 
 			#endif
+			SET_BIT( GICR , EXTI_LINE0 ); // Enable Interrupt
 
 		#elif EXTI_LINE == EXTI_LINE2
 				DIO_enumSetPinDirection(DIO_PORTB, DIO_PIN2,DIO_INPUT);
@@ -75,6 +76,7 @@ void EXTI_voidInit( void )
 					SET_BIT( MCUCSR , 6 );
 
 				#endif
+				SET_BIT( GICR , EXTI_LINE2 ); // Enable Interrupt
 
 		#endif
 
