@@ -33,8 +33,8 @@ void CLCD_voidClear        ( void );
 void CLCD_voidSendData     ( u8 Copy_u8Data        );
 void CLCD_voidSendCommend  ( u8 Copy_u8Commend     );
 void CLCD_voidSendString   ( u8 * Copy_u8ptrString );
-void CLCD_voidSendNumber   ( u64 Copy_s64Number    );   5 == '5'
-void CLCD_voidSendFloatNumber   ( f64 Copy_f64Number    ); 31.6
+void CLCD_voidSendNumber   ( u64 Copy_s64Number    );
+void CLCD_voidSendFloatNumber   ( f64 Copy_f64Number    ); 
 void CLCD_voidSetPosition  ( u8 Copy_u8Row , u8 Copy_u8Col );
 void CLCD_voidSendExtraChar( void );
 void CLCD_voidDisplayExtraChar( u8 Copy_u8CharNumber , u8 Copy_u8Row , u8 Copy_u8Col );
